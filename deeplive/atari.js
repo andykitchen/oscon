@@ -101,6 +101,8 @@ function onRuntimeInitialized() {
 	var canvas_rgb = document.getElementById("canvas-rgb")
 	var ctx_rgb = canvas_rgb.getContext("2d")
 
+	var canvas_vis = document.getElementById("canvas-vis")
+	var ctx_vis = canvas_vis.getContext("2d")
 
 	var imageData = ctx.createImageData(160, 210)
 	// var buf = new ArrayBuffer(imageData.data.length);
@@ -201,6 +203,25 @@ function onRuntimeInitialized() {
 			var action = action_set[action_index]
 
 			update_buttons(action)
+
+			var tile_size = 20
+			var tile_pad = 1
+			for(var i = 0; i < 16; i++) {
+				for(var j = 0; j < 16; j++) {
+					var a = net.layers[6].out_act.get(0, 0, i*16 + j)
+					var z = Math.floor(a);
+					var r = z,
+						g = z,
+						b = z;
+
+					ctx_vis.fillStyle = "rgba("+r+","+g+","+b+", 1.0)";
+					ctx_vis.fillRect(
+						i*tile_size + tile_pad, 
+						j*tile_size + tile_pad,
+						tile_size - tile_pad,
+						tile_size - tile_pad);
+				}
+			}
 
 			// var r = Math.random()
 			// if(r < 0.1) {
