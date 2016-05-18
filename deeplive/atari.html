@@ -1,16 +1,56 @@
 <html>
 <head>
+<style>
+	#canvas-rgb{
+		ms-transform: scale(3,3);
+		webkit-transform: scale(3,3);
+		transform: scale(3,3);
+		transform-origin: top left;
+		position: absolute;
+	}
+	#placeholder{
+		float: left;
+		width: 480px;
+		height: 630px;
+		margin-right: 30px;
+		outline: 1px solid pink;
+	}
+	#neurons{
+		outline: 1px solid green;
+		margin: 20px 0;
+	}
+	#controller{
+		outline: 1px solid red;
+		margin: 20px 0;
+	}
+</style> 
 </head>
 <body>
-	<canvas id="canvas" height="210" width="160"></canvas>
-	<canvas id="canvas-rgb" height="210" width="160"></canvas>
-	<canvas id="canvas-s0" height="84" width="84"></canvas>
-	<canvas id="canvas-s1" height="84" width="84"></canvas>
-	<canvas id="canvas-s2" height="84" width="84"></canvas>
-	<canvas id="canvas-s3" height="84" width="84"></canvas>
+	<!-- not being used-->
+	<canvas id="canvas" height="210" width="160" style="display:none; opacity:0;"></canvas>
+
+	<canvas id="canvas-rgb" height="630" width="320"></canvas>
+
+	<!-- not being used-->
+	<canvas id="canvas-s0" height="84" width="84" style="display:none; opacity:0;"></canvas>
+	<canvas id="canvas-s1" height="84" width="84" style="display:none; opacity:0;"></canvas>
+	<canvas id="canvas-s2" height="84" width="84" style="display:none; opacity:0;"></canvas>
+	<canvas id="canvas-s3" height="84" width="84" style="display:none; opacity:0;"></canvas>
+
+	<div class="wrapper">
+		<section id="placeholder"></section>
+		<section id="neurons">
+			Neurons go here
+		</section>
+		<section id="controller">
+			Controller goes here
+		</section>
+	</div>
+
 	<script src="pretrained_net.js"></script>
 	<script src="convnet.js"></script>
 	<script src="atari.js"></script>
 	<script src="ale_interface.js"></script>
+
 </body>
 </html>
