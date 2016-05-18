@@ -6,6 +6,8 @@ Module = {};
 var net = new convnetjs.Net();
 net.fromJSON(net_json);
 
+window.net = net
+
 function argmax(arr) {
 	var k = undefined
 	var x = Number.NEGATIVE_INFINITY
@@ -117,13 +119,19 @@ function onRuntimeInitialized() {
 
 	var data = imageData.data
 
-	var vol = new convnetjs.Vol(84, 84, 4)
+	var input_size = 84
+
+	var vol = new convnetjs.Vol(input_size, input_size, 4)
 
 	var rotate_screens = function() {
-		for(var i = 3; i > 0; i--) {
-			ctx_out[i-1].drawImage(canvas_out[i], 0, 0)
+		for(var i = 0; i < 3; i++) {
+			ctx_out[i].drawImage(canvas_out[i+1], 0, 0)
 		}
 	}
+
+	var frameskip_counter = 1;
+	var last_action = 0;
+
 
 	var btn_left  = document.getElementById("btn-left")
 	var btn_right = document.getElementById("btn-right")
@@ -176,24 +184,36 @@ function onRuntimeInitialized() {
 	}
 
 	var draw = function() {
-		var w = vol.w;
-		for(var k = 0; k < 4; k++) {
-			var imageData_small = ctx_out[k].getImageData(0, 0, 84, 84)
-			var small_data = imageData_small.data
-			for(var i = 0; i < screen_len; i++) {
-				w[4*i + k] = small_data[4*i] / 255.0
+		if(frameskip_counter <= 1) {
+			for(var d = 0; d < 4; d++) {
+				var imageData_small = ctx_out[d].getImageData(0, 0, input_size, input_size)
+				var small_data = imageData_small.data
+				for(var y = 0; y < input_size; y++) {
+					for(var x = 0; x < input_size; x++) {
+						// vol.set(x, y, d, small_data[4*(imageData_small.width*y + x)] / 255.0)
+						vol.set(x, y, d, small_data[4*(imageData_small.width*y + x)])
+					}
+				}
 			}
+
+			var res = net.forward(vol)
+			var action_index = argmax(res.w)
+			var action = action_set[action_index]
+
+			update_buttons(action)
+
+			// var r = Math.random()
+			// if(r < 0.1) {
+			// 	action = action_set[Math.floor(Math.random()*action_set.length)]
+			// }
+
+			last_action = action
+			frameskip_counter = 4
+		} else {
+			action = last_action
+			frameskip_counter -= 1
 		}
 
-		var res = net.forward(vol)
-		var action_index = argmax(res.w)
-		var action = action_set[action_index]
-
-		var r = Math.random()
-		if(r < 0.1) {
-			action = action_set[Math.floor(Math.random()*action_set.length)]
-		}
-		update_buttons(action)
 		ALE.act(ale, action)
 
 		rotate_screens()
@@ -205,6 +225,7 @@ function onRuntimeInitialized() {
 
 		ctx.putImageData(imageData, 0, 0);
 		ctx_out[3].drawImage(canvas, 0, 0, 160, 210, 0, -18, 84, 110)
+		// ctx_out[3].drawImage(canvas, 0, 0, 160, 210, 0, 0, 84, 84)
 
 		ALE._getScreenRGB(ale, screen_rgb_ptr)
 		ALE.util.rgb2rgba(screen_len, screen_rgb_ptr, buf8_ptr)
@@ -216,6 +237,8 @@ function onRuntimeInitialized() {
 	var redraw = function() {
 		draw()
 		window.requestAnimationFrame(redraw)
+		// console.log("tick")
+		// window.setTimeout(redraw, 500)
 	}
 
 	redraw()
