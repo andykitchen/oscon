@@ -66,6 +66,8 @@ function wrap_ale(Module, ALE) {
 
 	ALE.act = Module.cwrap('act', 'number', ['number', 'number'])
 
+	ALE.reset_game = Module.cwrap('reset_game', null, ['number'])
+
 	ALE.util = {}
 
 	ALE.util.gray2rgba = Module.cwrap('gray2rgba', null, ['number', 'number', 'number'])
@@ -138,6 +140,12 @@ function onRuntimeInitialized() {
 	var btn_left  = document.getElementById("btn-left")
 	var btn_right = document.getElementById("btn-right")
 	var btn_shoot = document.getElementById("btn-shoot")
+
+	document.body.addEventListener('click', function() {
+		console.log('reset!')
+		ALE.reset_game(ale);
+	}, false)
+
 
 	var update_buttons = function(action) {
 		var setActive = function(btn, active) {

@@ -11,4 +11,4 @@ emcc \
 	-lale_c -lz \
 	ale-util.c \
 	-o ale_interface.js \
-	-s EXPORTED_FUNCTIONS="['_ALE_new', '_loadROM','_getMinimalActionSize', '_getMinimalActionSet', '_act', '_getScreenWidth', '_getScreenHeight', '_getScreenRGB', '_getScreenGrayscale', '_gray2rgba', '_rgb2rgba']"
+	-s EXPORTED_FUNCTIONS="['_ALE_new', '_loadROM','_getMinimalActionSize', '_getMinimalActionSet', '_act', '_getScreenWidth', '_getScreenHeight', '_getScreenRGB', '_getScreenGrayscale', '_reset_game', '_gray2rgba', '_rgb2rgba']"
