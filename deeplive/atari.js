@@ -125,6 +125,56 @@ function onRuntimeInitialized() {
 		}
 	}
 
+	var btn_left  = document.getElementById("btn-left")
+	var btn_right = document.getElementById("btn-right")
+	var btn_shoot = document.getElementById("btn-shoot")
+
+	var update_buttons = function(action) {
+		var setActive = function(btn, active) {
+			if(active) {
+				btn.classList.add('active')
+			} else {
+				btn.classList.remove('active')
+			}
+		}
+
+		if(action == 0) {
+			setActive(btn_left,  false)
+			setActive(btn_right, false)
+			setActive(btn_shoot, false)
+		}
+
+		if(action == 1) {
+			setActive(btn_left,  false)
+			setActive(btn_right, false)
+			setActive(btn_shoot, true)
+		}
+
+		if(action == 3) {
+			setActive(btn_left,  false)
+			setActive(btn_right, true)
+			setActive(btn_shoot, false)
+		}
+
+		if(action == 4) {
+			setActive(btn_left,  false)
+			setActive(btn_right, true)
+			setActive(btn_shoot, false)
+		}
+
+		if(action == 11) {
+			setActive(btn_left,  false)
+			setActive(btn_right, true)
+			setActive(btn_shoot, true)
+		}
+
+		if(action == 12) {
+			setActive(btn_left,  true)
+			setActive(btn_right, false)
+			setActive(btn_shoot, true)
+		}
+	}
+
 	var draw = function() {
 		var w = vol.w;
 		for(var k = 0; k < 4; k++) {
@@ -143,6 +193,7 @@ function onRuntimeInitialized() {
 		if(r < 0.1) {
 			action = action_set[Math.floor(Math.random()*action_set.length)]
 		}
+		update_buttons(action)
 		ALE.act(ale, action)
 
 		rotate_screens()
