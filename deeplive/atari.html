@@ -13,16 +13,69 @@
 		width: 480px;
 		height: 630px;
 		margin-right: 30px;
-		outline: 1px solid pink;
+		/*outline: 1px solid pink;*/
 	}
 	#neurons{
-		outline: 1px solid green;
+		/*outline: 1px solid green;*/
 		margin: 20px 0;
 	}
 	#controller{
-		outline: 1px solid red;
+		/*outline: 1px solid red;*/
 		margin: 20px 0;
+		float: left;
 	}
+	.controller-wrapper{
+		background: url(../images/keyboard.png);
+		background-size: 314px 104px;
+		background-repeat: no-repeat;
+		width: 314px;
+		height: 104px;
+		text-align: center;
+	}
+	.btn{
+		background: url(../images/keys-sprite.png);
+		background-repeat: no-repeat;
+		background-position: 0 -77px;
+		background-size: 245px 154px;
+		width: 83px;
+		height: 77px;
+		padding: 0;
+		margin: 0;
+		outline: 0;
+		border: 0;
+		display: inline-block;		
+		margin: 12px 10px 0 0;
+	}
+	.btn:last-child{
+		margin-right: 0;
+		margin-left: 20px;
+	}
+
+	.btn.btn-left{
+		background-position: 0 -77px;
+	}
+
+	.btn.btn-left:active, .btn.btn-left:focus, .btn.btn-left.active{
+		background-position: 0 0;
+	}
+
+	.btn.btn-right{
+		background-position: -89px -77px;
+	}
+
+	.btn.btn-right:active, .btn.btn-right:focus, .btn.btn-right.active{
+		background-position: -89px 0;
+	} 
+	.btn.btn-shoot{
+		background-position: -176px -77px;
+		width: 69px;
+	}
+
+	.btn.btn-shoot:active, .btn.btn-shoot:focus, .btn.btn-shoot.active{
+		background-position: -176px 0;
+	}   
+
+
 </style> 
 </head>
 <body>
@@ -43,7 +96,11 @@
 			Neurons go here
 		</section>
 		<section id="controller">
-			Controller goes here
+			<div class="controller-wrapper">
+				<button class="btn btn-left"></button>
+				<button class="btn btn-right"></button>
+				<button class="btn btn-shoot"></button>
+			</div>
 		</section>
 	</div>
 
