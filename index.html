@@ -1,79 +1,80 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-    <title>AbracadaBRAIN!</title>
+  <title>A.I. made Actually Intelligible with Andy Kitchen</title>
 
-    <meta name="description" content="Slides for a presentation about Machine Learning">
-    <meta name="author" content="Andy Kitchen">
+  <meta name="description" content="Slides for a presentation about Machine Learning">
+  <meta name="author" content="Andy Kitchen">
 
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/ak.css" id="theme">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/ak.css" id="theme">
 
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
 
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
-    <style>
-      h1.left {
-        text-align: left;
-      }
+  <style>
+    h1.left {
+      text-align: left;
+    }
 
-      h1.right {
-        text-align: right;
-      }
+    h1.right {
+      text-align: right;
+    }
 
-      .light {
-        color: #fff;
-        text-shadow: 3px 3px 5px black;
-      }
+    .light {
+      color: #fff;
+      text-shadow: 3px 3px 5px black;
+    }
 
-      .circle {
-        border-radius: 50%;
-        width: 200px;
-        height: 200px;
-        background: black;
-        display: inline-block;
-      }
+    .circle {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      background: black;
+      display: inline-block;
+    }
 
-      iframe.full-page {
-        max-width: 100% !important;
-        max-height: 100% !important;
-      }
+    iframe.full-page {
+      max-width: 100% !important;
+      max-height: 100% !important;
+    }
 
-      section.full-page {
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-    </style>
-  </head>
+    section.full-page {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  </style>
+</head>
 
-  <body>
+<body>
 
-    <div class="reveal">
-      <div class="slides">
+  <div class="reveal">
+    <div class="slides">
 
       <section>
         <section>
-          <h1>Abracada-BRAIN!</h1>
+          <h1>A.I. made Actually Intelligible</h1>
+          <p>with Andy Kitchen</p>
         </section>
       </section>
 
@@ -92,7 +93,8 @@
 
       <section data-background="images/oscon-the-pledge.jpg" class="dark-bg">
         <section>
-          The magician shows you something ordinary: a deck of cards, a bird or a man. [...] Perhaps he asks you to inspect it to see if it is indeed real, unaltered, normal. But of course... it probably isn't.
+          The magician shows you something ordinary: a deck of cards, a bird or a man. [...] Perhaps he asks you to inspect it to see
+          if it is indeed real, unaltered, normal. But of course... it probably isn't.
           <p><small>- <a href="http://www.imdb.com/title/tt0482571/quotes" target="_blank">The Prestige</a></small></p>
         </section>
       </section>
@@ -150,7 +152,7 @@
           <div class="circle" id="independent1"></div>
           <div class="circle" id="independent2"></div>
           <script type="text/javascript">
-            setInterval(function() {
+            setInterval(function () {
               var circle1 = document.getElementById("independent1")
               var circle2 = document.getElementById("independent2")
 
@@ -164,7 +166,7 @@
           <div class="circle" id="together1"></div>
           <div class="circle" id="together2"></div>
           <script type="text/javascript">
-            setInterval(function() {
+            setInterval(function () {
               var circle1 = document.getElementById("together1")
               var circle2 = document.getElementById("together2")
 
@@ -182,7 +184,7 @@
 
       <section data-background="images/oscon-the-turn.jpg" class="dark-bg">
         <section>
-          The magician takes the ordinary something and makes it do something extraordinary. 
+          The magician takes the ordinary something and makes it do something extraordinary.
           <!--Now you're looking for the secret... but you won't find it, because of course you're not really looking. You don't really want to know.-->
           <p><small>- <a href="http://www.imdb.com/title/tt0482571/quotes" target="_blank">The Prestige</a></small></p>
         </section>
@@ -224,14 +226,15 @@
         </section>
       </section>
 
-      <section>          
+      <section>
         <h1>3. The Prestige</h1>
       </section>
 
       <section data-background="images/oscon-magician-audience.jpg" class="dark-bg">
         <section>
-           Because making something disappear isn't enough; you have to bring it back. That's why every magic trick has a third act, the hardest part, the part we call "The Prestige".
-           <p><small>- <a href="http://www.imdb.com/title/tt0482571/quotes" target="_blank">The Prestige</a></small></p>
+          Because making something disappear isn't enough; you have to bring it back. That's why every magic trick has a third act,
+          the hardest part, the part we call "The Prestige".
+          <p><small>- <a href="http://www.imdb.com/title/tt0482571/quotes" target="_blank">The Prestige</a></small></p>
         </section>
       </section>
 
@@ -251,7 +254,7 @@
         </section>
         <section data-frame-src='deeplive/atari.html'>
           <iframe src="" width="1024" height="768"></iframe>
-        </section>  
+        </section>
       </section>
 
       <section>
@@ -276,7 +279,8 @@
         <section>
           <div xmlns:cc="http://creativecommons.org/ns#" about="urn:sha1:J3CFKI37B676KW7OYLKXKZSKY7FB2M5O">
             <h3>
-              <a rel="cc:attributionURL" property="cc:attributionName" target="_blank" href="http://ccmixter.org/files/scottaltham/24942"> Scott Altham</a>
+              <a rel="cc:attributionURL" property="cc:attributionName" target="_blank" href="http://ccmixter.org/files/scottaltham/24942">
+                Scott Altham</a>
             </h3>
             <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0</a>
             <p>
@@ -288,8 +292,8 @@
           <h3>Andrej Karpathy</h3>
           <a href="http://twitter.com/karpathy" target="_blank">@karpathy</a>
           <p><a href="http://cs.stanford.edu/people/karpathy/convnetjs/" target="_blank">
-            <small>cs.stanford.edu/people/karpathy/convnetjs</small>
-          </a></p>
+              <small>cs.stanford.edu/people/karpathy/convnetjs</small>
+            </a></p>
         </section>
         <section>
           <h3>Laura Summers</h3>
@@ -299,89 +303,90 @@
           <h3>Andy Kitchen</h3>
           <a href="http://twitter.com/auastro" target="_blank">@auastro</a>
           <p><a href="http://andy.kitchen/oscon/">
-            <small>andy.kitchen/oscon</small>
-          </a></p>
+              <small>andy.kitchen/oscon</small>
+            </a></p>
         </section>
       </section>
 
       <div>
-    </div>
+      </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.js"></script>
 
-    <link rel="stylesheet" href="lib/app/tree.css">
-    <script type="text/javascript" src="lib/d3/d3.js"></script>
-    <script type="text/javascript" src="lib/app/tree.js"></script>
+      <link rel="stylesheet" href="lib/app/tree.css">
+      <script type="text/javascript" src="lib/d3/d3.js"></script>
+      <script type="text/javascript" src="lib/app/tree.js"></script>
 
-    <script type="text/javascript">
-      Reveal.addEventListener('fragmentshown', function() {
-        var fragment = event.fragment
-        if(fragment && fragment.dataset.src) {
-          var target = document.querySelector(fragment.dataset.target)
-          fragment.dataset.old_src = target.dataset.src
-          target.dataset.src = fragment.dataset.src
-          load_tree(fragment.dataset.src)
-        }
-      });
+      <script type="text/javascript">
+        Reveal.addEventListener('fragmentshown', function () {
+          var fragment = event.fragment
+          if (fragment && fragment.dataset.src) {
+            var target = document.querySelector(fragment.dataset.target)
+            fragment.dataset.old_src = target.dataset.src
+            target.dataset.src = fragment.dataset.src
+            load_tree(fragment.dataset.src)
+          }
+        });
 
-      Reveal.addEventListener('fragmenthidden', function() {
-        var fragment = event.fragment
-        if(fragment && fragment.dataset.src) {
-          var target = document.querySelector(fragment.dataset.target)
-          target.dataset.src = fragment.dataset.old_src
-          load_tree(fragment.dataset.old_src)
-        }
-      });
+        Reveal.addEventListener('fragmenthidden', function () {
+          var fragment = event.fragment
+          if (fragment && fragment.dataset.src) {
+            var target = document.querySelector(fragment.dataset.target)
+            target.dataset.src = fragment.dataset.old_src
+            load_tree(fragment.dataset.old_src)
+          }
+        });
 
-      Reveal.addEventListener('slidechanged', function(event) {
-        if(event.currentSlide && event.currentSlide.dataset.frameSrc) {
-          var iframe = event.currentSlide.querySelector('iframe')
-          iframe.src = event.currentSlide.dataset.frameSrc;
-        }
-        
-        if(event.previousSlide && event.previousSlide.dataset.frameSrc) {
-          var iframe = event.previousSlide.querySelector('iframe')
-          iframe.src = "";
-        }
-      });
+        Reveal.addEventListener('slidechanged', function (event) {
+          if (event.currentSlide && event.currentSlide.dataset.frameSrc) {
+            var iframe = event.currentSlide.querySelector('iframe')
+            iframe.src = event.currentSlide.dataset.frameSrc;
+          }
 
-      (function() {
-        var tree = document.querySelector('#tree')
-        load_tree(tree.dataset.src)
-      })();
-    </script>
+          if (event.previousSlide && event.previousSlide.dataset.frameSrc) {
+            var iframe = event.previousSlide.querySelector('iframe')
+            iframe.src = "";
+          }
+        });
 
-    <script>
+        (function () {
+          var tree = document.querySelector('#tree')
+          load_tree(tree.dataset.src)
+        })();
+      </script>
 
-      // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: false,
-        history: true,
-        center: true,
+      <script>
 
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+          controls: true,
+          progress: false,
+          history: true,
+          center: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
-        ],
+          transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+          // Optional reveal.js plugins
+          dependencies: [
+            { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+            { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+          ],
 
 
-        width: 1024,
-        height: 768,
+          width: 1024,
+          height: 768,
 
-        margin: 0.0,
-      });
+          margin: 0.0,
+        });
 
-    </script>
+      </script>
 
-  </body>
+</body>
+
 </html>
